@@ -3,6 +3,8 @@ param(
     [string]$PipeOut
 )
 
+echo "welcome to powershell!"
+
 # Connect to Node pipes
 $inPipe  = new-object System.IO.Pipes.NamedPipeClientStream(".", $PipeIn, [System.IO.Pipes.PipeDirection]::In)
 $outPipe = new-object System.IO.Pipes.NamedPipeClientStream(".", $PipeOut, [System.IO.Pipes.PipeDirection]::Out)
@@ -33,4 +35,9 @@ Start-Job {
         $line = Read-Host
         if ($line) { $outWriter.WriteLine($line) }
     }
+}
+
+while ($true) {
+    $input = Read-Host -Prompt "PS (type 'exit' to quit)"
+    if ($input -eq "exit") { break }
 }
