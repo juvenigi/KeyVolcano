@@ -8,10 +8,12 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "ws": "^8.19.0"
   },
   "devDependencies": {
-    "typescript": "~5.9.3",
     "@types/node": "^24.10.1",
-    "globals": "^17.3.0"
+    "@types/ws": "^8.18.1",
+    "globals": "^17.3.0",
+    "typescript": "~5.9.3"
   }
 }
